@@ -39,6 +39,17 @@ class ServiceRepository extends ServiceEntityRepository
         }
     }
 
+    public function getServiceByUser($idUser){
+
+             return $this->createQueryBuilder('s')
+                ->select('s','u.lastname')
+                ->innerJoin('s.patrimonies', 'pa')
+                ->innerJoin('pa.users','u')
+                ->where('u.id = '.$idUser)
+                ->getQuery()
+                ->getResult();
+    }
+
 //    /**
 //     * @return Service[] Returns an array of Service objects
 //     */

@@ -6,13 +6,20 @@ use App\Repository\ServiceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Annotation\ApiProperty;
+
+
 
 /**
+ *
  * @ORM\Entity(repositoryClass=ServiceRepository::class)
  */
 class Service
 {
     /**
+     * @Groups({"service"})
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -20,31 +27,38 @@ class Service
     private $id;
 
     /**
+     * @Groups({"service"})
      * @ORM\Column(type="string", length=255)
      */
     private $label;
 
     /**
+     * @Groups({"service"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $sublabel;
 
     /**
+     * @Groups({"service"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
+     * @Groups({"service"})
      * @ORM\Column(type="date")
      */
     private $date_debut_publication;
 
     /**
+     * @Groups({"service"})
      * @ORM\Column(type="string", length=255)
      */
     private $date_fin_publication;
 
     /**
+     *
+     * @Groups({"service"})
      * @ORM\ManyToMany(targetEntity=Patrimony::class, mappedBy="services")
      */
     private $patrimonies;
