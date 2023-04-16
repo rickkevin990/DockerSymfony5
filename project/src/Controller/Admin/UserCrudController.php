@@ -92,6 +92,7 @@ class UserCrudController extends AbstractCrudController
 
             $hash = $this->userPasswordHasher->hashPassword($form->getData(), $password);
             $form->getData()->setPassword($hash);
+            $form->getData()->setRoles(["ROLE_ADMIN"]);
         };
     }
 

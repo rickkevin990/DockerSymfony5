@@ -33,9 +33,12 @@ services:
         volumes:
             - ./php/vhosts:/etc/apache2/sites-enabled
             - ./:/var/www
+#        command: bash -c "cd project && php bin/console doctrine:database:create && php bin/console doctrine:migrations:migrate"
+#        command: bash -c "cd project"
         restart: always
         networks:
             - dev
+
             
    
 networks:
