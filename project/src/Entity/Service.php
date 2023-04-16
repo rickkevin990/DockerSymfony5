@@ -50,11 +50,7 @@ class Service
      */
     private $date_debut_publication;
 
-    /**
-     * @Groups({"service"})
-     * @ORM\Column(type="string", length=255)
-     */
-    private $date_fin_publication;
+
 
     /**
      *
@@ -62,6 +58,11 @@ class Service
      * @ORM\ManyToMany(targetEntity=Patrimony::class, mappedBy="services")
      */
     private $patrimonies;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $date_fin_publications;
 
 
 
@@ -124,17 +125,8 @@ class Service
         return $this;
     }
 
-    public function getDateFinPublication(): ?string
-    {
-        return $this->date_fin_publication;
-    }
 
-    public function setDateFinPublication(string $date_fin_publication): self
-    {
-        $this->date_fin_publication = $date_fin_publication;
 
-        return $this;
-    }
 
     public function __toString(): string
     {
@@ -172,6 +164,18 @@ class Service
         if ($this->patrimonies->removeElement($patrimony)) {
             $patrimony->removeService($this);
         }
+
+        return $this;
+    }
+
+    public function getDateFinPublications(): ?\DateTimeInterface
+    {
+        return $this->date_fin_publications;
+    }
+
+    public function setDateFinPublications(?\DateTimeInterface $date_fin_publications): self
+    {
+        $this->date_fin_publications = $date_fin_publications;
 
         return $this;
     }

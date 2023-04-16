@@ -24,7 +24,7 @@ class ServiceCrudController extends AbstractCrudController
             TextField::new('label'),
             TextField::new('sublabel'),
             DateField::new('date_debut_publication'),
-//            DateField::new('date_fin_publication'),
+            DateField::new('date_fin_publications'),
             AssociationField::new('patrimonies'),
             TextEditorField::new('description'),
 

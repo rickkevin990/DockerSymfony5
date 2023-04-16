@@ -42,7 +42,7 @@ class UserCrudController extends AbstractCrudController
             ->setFormTypeOptions([
                 'type' => PasswordType::class,
                 'first_options' => ['label' => 'Password'],
-                'second_options' => ['label' => '(Repeat)'],
+                'second_options' => ['label' => 'Confirm password'],
                 'mapped' => false,
             ])
             ->setRequired($pageName === Crud::PAGE_NEW)

@@ -12,14 +12,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class ServiceController extends AbstractController
 {
-    /**
-     * @Route("/api/service", name="api_service" , methods={"GET"})
-     */
-    public function index(ServiceRepository $serviceRepository ): Response
-    {
-        $service = $serviceRepository->findAll();
-        return $this->json($service,200,[],['groups' => 'service']);
-    }
+
     /**
      * @Route("/api/service-user/{id}", name="api_service_user" , methods={"GET"})
      */
