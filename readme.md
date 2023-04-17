@@ -28,3 +28,12 @@ Admin account
 
 > * email : <b>kekes@mail.com</b> 
 > * password :  <b>password</b>
+
+### API
+API that returns the services associated with a user.
+
+GET   /api/service-user/{id_user}
+
+```sql
+curl -i -H 'Accept: application/json' http://localhost:80/api/service-user/1
+```
