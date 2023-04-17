@@ -9,11 +9,12 @@ docker exec -it www_docker_symfony bash
 ```
 Install runtime symfony
 ```sql
+cd project
 composer require symfony/runtime
 ```
 Configure database with fake data
 ```sql
-cd project
+
 php bin/console d:d:c
 php bin/console d:m:m
 php bin/console d:f:l
