@@ -7,6 +7,10 @@ Run bash symfony
 ```sql
 docker exec -it www_docker_symfony bash
 ```
+Install runtime symfony
+```sql
+composer require symfony/runtime
+```
 Configure database with fake data
 ```sql
 cd project
